@@ -150,3 +150,86 @@ Facebook Page (Official): Not Available
     </div>
   )
 }
+
+*******************************props,state********************************
+
+------props----------
+----parent---
+import React from 'react'
+import {Child} from './child.js';
+export const Parent = () => {
+    const message = "hello from parent";
+  return (
+    <div>
+        <h1> This is parent component </h1>
+        <Child  message={message}/>
+    </div>
+  )
+}
+
+---child----
+import React from 'react'
+
+export const Child = (props) => {
+  return (
+    <div>
+        <h1>This is child component</h1>
+        <p>{props.message}</p>
+    </div>
+  )
+}
+-----state---------------------------------------------
+--counter---
+import React,{useState} from 'react'
+
+export function State() {
+    const [count,setCount] = useState(100);
+    var v=100;
+    function increment(){
+        setCount(count+1);
+    };
+    function decrement(){
+        setCount(count-1);
+    };
+    function reset1(){
+        setCount(100);
+    };
+    function reset2(){
+        //  var count2=100;
+        const c=100;
+        v=0;
+        v++;
+        setCount(c-v);
+    };
+------rough----
+import React from 'react'
+
+export const Rough=(props)=> {
+  return (
+    <div>
+        <h1>  Name: {props.name}</h1>
+        <h1> Ur Age : {props.Age}</h1>
+        
+
+    </div>
+  )
+}
+
+  return (
+    <div>
+<h1> Counter:{count}</h1>
+<button onClick={increment}>Increment</button>
+<button onClick={decrement}>Decrement</button>
+<button onClick={reset1}>reset1</button>
+<button onClick={reset2}>reset2</button>
+const one = [1, 2, 5,7];
+  const two = [13, 15, 16];
+  const three=[14,45,41];
+  
+  const [result, setResult] = useState([]);
+
+  const add = () => {
+    const combined =[...one,...two,...three];//spread operator
+    setResult(combined); 
+  };
+
