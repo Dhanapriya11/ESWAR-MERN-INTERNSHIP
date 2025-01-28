@@ -1,0 +1,322 @@
+ ----useeffect 1:----
+import React,{useState,useEffect} from 'react'
+
+export const Useeffect2 = () => {
+const [start,setStart]=useState(0)
+useEffect(()=>{console.log('the start value change:' ,start
+);},[start]
+);
+  return (
+    <div>
+        <p>{start}</p>
+    <button onClick={()=>setStart(start+1)}>+</button>
+    <button onClick={()=>setStart(start-1)}>-</button>
+    </div>
+  )
+}
+
+---useeffect 2----
+import React,{useState,useEffect} from 'react'
+
+export const Useeffect2 = () => {
+const [start,setStart]=useState(0)
+useEffect(()=>{
+    //title la output 
+    // document.title=`value${start}`;
+    
+    console.log('the start value change:' ,start
+);},[start]
+);
+  return (
+    <div>
+{/* <h1>{document.title}</h1> */}
+        <p>{start}</p>
+    <button onClick={()=>setStart(start+1)}>+</button>
+    <button onClick={()=>setStart(start-1)}>-</button>
+    </div>
+  )
+}
+
+----reducer 1----
+import React,{useReducer} from 'react'
+
+export const Usereducer = () => {
+    function reducerfunction(state,action){
+        
+        return {count:state.count+1}
+    }
+   
+    const [state, dispatch] = useReducer(reducerfunction, {count:55})
+     function increment(){
+        dispatch();
+     }
+     function decrement(){
+        dispatch();
+     }
+     console.log(state)
+     
+  return (
+    
+    <div>
+        
+        <p>count:{state.count}</p>
+        <button onClick={increment}>+</button>
+<button onClick={decrement}>-</button>
+    </div>
+  )
+}
+
+---reducer2----
+
+import React,{useReducer} from 'react'
+
+export const Usereducers = () => {
+    function reducerfunction(state,action){
+        switch(action.type){
+            case"increment":
+                 return{count:state.count+1}
+            case"decrement":
+                   return{count:state.count-1}
+        }
+
+        
+    }
+   
+    const [state, dispatch] = useReducer(reducerfunction, {count:55})
+     function increment(){
+        dispatch({type:'increment'});
+     }
+     function decrement(){
+        dispatch({type:'decrement'});
+     }
+     console.log(state)
+     
+  return (
+    
+    <div>
+        
+        <p>count:{state.count}</p>
+        <button onClick={increment}>+</button>
+<button onClick={decrement}>-</button>
+    </div>
+  )
+}
+
+---reducer 3---
+import React,{useReducer} from 'react'
+
+export const Usereducer3 = () => {
+    const ACTIONS={
+        INCREMENT:"increment",
+        DECREMENT:"decrement",
+        RESET:"reset"
+    }
+    function reducerfunction(state,action){
+        switch(action.type){
+            case ACTIONS.INCREMENT:
+                 return{count:state.count+1}
+            case ACTIONS.DECREMENT:
+                   return{count:state.count-1}
+            case ACTIONS.RESET:
+                return{count:55}
+
+        }
+
+        
+    }
+   
+    const [state, dispatch] = useReducer(reducerfunction, {count:55})
+     function increment(){
+        dispatch({type:'increment'});
+     }
+     function decrement(){
+        dispatch({type:'decrement'});
+     }
+     function reset(){
+        dispatch({type:'reset'});
+     }
+     console.log(state)
+     
+  return (
+    
+    <div>
+        
+        <p>count:{state.count}</p>
+        <button onClick={increment}>+</button>
+<button onClick={decrement}>-</button>
+<button onClick={reset}>reset</button>
+    </div>
+  )
+}
+---Rainbow---
+import React,{useState,useReducer,useEffect} from 'react'
+
+const ACTIONS= {
+    V:"v",
+    I: "i",
+    B:"b",
+    G:"g",
+    Y:"y",
+    O:"o",
+    R:"r"
+}
+
+function reducerfunction(state,action){
+   
+    switch(action.type){
+        case ACTIONS.V:
+            return {color:"Violet"}
+        case ACTIONS.I:
+            return {color:"Indigo"}
+        case ACTIONS.B:
+            return {color:"Blue"}
+        case ACTIONS.G:
+            return{color:"Green"}
+        case ACTIONS.Y:
+            return{color:"Yellow"}
+        case ACTIONS.O:
+            return{color:"Orange"}
+        case ACTIONS.R:
+            return{color:"Red"}
+    }
+    
+  }
+ export const Rainbow = () => {
+   const[state,dispatch] =useReducer(reducerfunction,{color:"color"})
+
+   function colors() {
+    const char = prompt("Enter:");
+    switch (char) {
+        case 'v':
+            dispatch({ type: ACTIONS.V });
+            break;
+        case 'i':
+            dispatch({ type: ACTIONS.I });
+            break;
+        case 'b':
+            dispatch({ type: ACTIONS.B });
+            break;
+        case 'g':
+            dispatch({ type: ACTIONS.G });
+            break;
+        case 'y':
+            dispatch({ type: ACTIONS.Y });
+            break;
+        case 'o':
+            dispatch({ type: ACTIONS.O });
+            break;
+        case 'r':
+            dispatch({ type: ACTIONS.R });
+            break;
+        default:
+            alert("Invalid input!");
+    }
+}
+
+  return (
+    <div>
+       
+       <h1>{state.color}</h1>     
+       <button onClick={colors}>color</button>
+  
+
+    </div>
+  )
+}
+export default Rainbow
+--form1--
+import React, { useState } from 'react'
+
+const Form1 = () => {
+    const[name,updateName]=useState(' ');
+    
+    function handleChange(e){
+        updateName(e.target.value)
+    }
+    
+  return (
+    <div>
+        <form>
+      <label>name </label>
+        <input type='text' value={name} onChange={handleChange}></input>
+      <h1>YOUR NAME IS :{name}</h1>
+      </form>
+    </div>
+  )
+}
+
+export default Form1
+--redux intro password ----------------------------------------------
+---password.js---
+import React from 'react';
+import {Correct} from './correct.js';
+import {Wrong} from './wrong.js';
+
+var y={
+  yourpassword : "123"
+}
+  var x = prompt("enter your password");
+
+ function Pass() {
+   let res;
+   if(x===y.yourpassword){
+    res=<Correct />
+   }
+   else{
+    res=<Wrong/>
+   }
+  return (
+
+     <div >
+
+      {res}
+    </div>
+  )
+}
+export default Pass;
+
+---correct.js----
+import React from 'react'
+
+export const Correct = () => {
+    
+  return (
+    <div>
+       
+                <h1>LOGIN GRANTED</h1>
+                <h1>👍</h1>
+            
+    </div>
+  )
+   
+}
+----wrong---
+import React from 'react'
+
+export const Wrong= () => {
+  return (
+    <div>
+                
+                <h1>ACCESS DECLINED</h1>
+                
+                <h1>👎</h1>
+                
+               
+    </div>
+  )
+}
+----example---
+ import React from 'react'
+ var obj={
+    x:12,
+    y:"Dhanapriya"
+ }
+ export const Example = () => {
+   return (
+     <div>
+        <h1>{obj.x}</h1>
+        <h2>{obj.y}</h2>
+     </div>
+   )
+ }
+ 
