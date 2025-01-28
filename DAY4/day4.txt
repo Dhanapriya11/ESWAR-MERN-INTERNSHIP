@@ -1,0 +1,152 @@
+React APP CREATION NAMED AS DEMO :
+FULL SETUP.
+
+
+*****************************************Using Router ***************************************
+---home.js---
+import React from 'react'
+
+export const Home = () => {
+  return (
+    <div>
+         <div style={{ marginTop: '90px', padding: '5px' }}>
+        <h1>Home</h1>
+        <h2>Dhoni</h2>
+        <p>
+        Dhoni was born on 7 July 1981 in Ranchi, Bihar (now in Jharkhand) in a Hindu Rajput family to Pan Singh and Devaki Devi.[4] His parents hailed from Lwali village in Uttar Pradesh (now Uttarakhand) and he was the youngest of three children.[5][6][7] His family spells the surname as "Dhauni".[8] The spelling "Dhoni" emerged due to a spelling mistake in his school certificates and, despite repeated attempts by his family, has never been rectified.[9]
+
+Dhoni did his schooling at DAV Jawahar Vidya Mandir where he started playing football as a goal keeper but later moved to play cricket on the suggestion of his coach Keshav Banerjee.[10][11] From 2001 to 2003, Dhoni worked as a Travelling Ticket Examiner (TTE) at Kharagpur under South Eastern Railway zone of Indian Railways.[12][13]
+
+Early career
+He played as a wicket-keeper for Commando cricket club from 1995 to 1998 and Central Coal Fields Limited (CCL) team in 1998.[14] At CCL, he batted higher up the order and helped the team qualify to the higher division.[15] Based on his performance at club cricket, he was picked for the 1997/98 season of Vinoo Mankad Trophy under-16 championship.[16][17] In the 1998–99, Dhoni played for Bihar U-19 team in the Cooch Behar Trophy and scored 176 runs in 5 matches. In the 1999–2000 Cooch Behar Trophy, the Bihar U-19 cricket team made it to the finals, where Dhoni made 84 in a losing cause.[18] Dhoni's contribution in the tournament included 488 runs in nine matches with five fifties, 17 catches and seven stumpings.[19] Dhoni made it to the East Zone U-19 squad for the C. K. Nayudu Trophy in the 1999–2000 season and scored only 97 runs in four matches, as East Zone lost all the matches and finished last in the tournament.[20][21]
+
+Dhoni made his Ranji Trophy debut for Bihar against Assam in the 1999–2000 season, as an eighteen-year-old scoring 68 runs in the second innings.[22] Dhoni finished the season with 283 runs in 5 matches. Dhoni scored his maiden first-class century while playing for Bihar against Bengal in the 2000–01 Ranji Trophy season.[23] Apart from this century, his performance in the 2000/01 season did not include another score over fifty and in the 2001–02 Ranji Trophy season, he scored just five fifties in four Ranji matches.[24][25] Dhoni's played for Jharkhand in the 2002–03 Ranji Trophy and represented East Zone in the Deodhar Trophy where he started gaining recognition for his lower-order contribution as well as hard-hitting batting style. In the 2003/04 season, Dhoni scored a century (128*) against Assam in the first match of the Ranji ODI tournament and was part of the East Zone squad that won the Deodhar Trophy 2003–2004 season scoring 244 runs in four matches.[26][27]
+
+In the Duleep Trophy finals, Dhoni represented East Zone and scored a fighting half-century in the second innings in a losing cause.[28] Dhoni was identified as one of the emerging talents via the BCCI's small-town talent-spotting initiative TRDW.[29][30] In 2004, Dhoni was picked for the India A squad for a tour of Zimbabwe and Kenya.[31] Against the Zimbabwe XI in Harare Sports Club, Dhoni effected seven catches and four stumpings.[32] In the tri-nation tournament involving Kenya, India A and Pakistan A, Dhoni helped India A chase down their target of 223 against Pakistan A with a half-century and scored 362 runs in six innings at an average of 72.40 with back to back centuries.[33][34][35]
+        </p>
+    </div>
+    </div>
+  )
+}
+---about.js---
+import dhoni from './dhoni.png'
+function About(){
+  return (
+<div>
+<img 
+      src={dhoni}
+      alt="Dhoni" 
+      style={{ 
+        position: 'absolute', 
+        top: '10px', 
+        right: '10px', 
+        width: '150px', 
+        height: '150px', 
+        borderRadius: '10px' 
+      }} 
+    />
+<h1>About</h1>
+    <p>
+    Mahendra Singh Dhoni (/məˈheɪndrə ˈsɪŋ dhæˈnɪ/ ⓘ; born 7 July 1981) is an Indian professional cricketer who plays as a right-handed batter and a wicket-keeper. Widely regarded as one of the most prolific wicket-keeper batsmen and captains, he represented the Indian cricket team and was the captain of the side in limited overs formats from 2007 to 2017 and in test cricket from 2008 to 2014. Dhoni has captained the most international matches and is the most successful Indian captain. He has led India to victory in the 2007 ICC World Twenty20, the 2011 Cricket World Cup, and the 2013 ICC Champions Trophy, being the only captain to win three different limited overs ICC tournaments. He also led the teams that won the Asia Cup in 2010, 2016 and was a member of the title winning squad in 2018.
+    </p>
+    <ul>
+      <li>
+   
+    <p>
+    Born in Ranchi, Dhoni made his first class debut for Bihar in 1999. He made his debut for the Indian cricket team on 23 December 2004 in an ODI against Bangladesh and played his first test a year later against Sri Lanka. In 2007, he became the captain of the ODI side before taking over in all formats by 2008. Dhoni retired from test cricket in 2014 but continued playing in limited overs cricket till 2019. He has scored 17,266 runs in international cricket including 10,000 plus runs at an average of more than 50 in ODIs.International career
+Debut and early years
+The Indian ODI team in the early 2000s saw Rahul Dravid as the wicket-keeper to ensure that the wicket-keeper spot didn't lack in batting talent and also tried other wicket-keeper/batsmen like Parthiv Patel and Dinesh Karthik.[36] With Dhoni performing well for the India A squad, he was picked in the ODI squad for the Bangladesh tour in December 2004.[37] Dhoni made his debut in the first match of the series and was run out for a duck.[38] Dhoni was picked for the subsequent ODI series against Pakistan.[39] In the second match of the series in Visakhapatnam, Dhoni playing in his fifth one-day international, scored 148 runs off 123 deliveries which surpassed the earlier record for the highest score by an Indian wicket-keeper.[40] Dhoni played in the Sri Lankan bilateral ODI series in October–November 2005 and was promoted to No. 3 in the batting order in the third ODI at Jaipur where he scored an unbeaten 183 runs off 145 balls, winning the game for India.[41] The innings would surpass his earlier record for the highest score by an Indian wicket-keeper and was described in Wisden Almanack as 'Uninhibited, yet anything but crude'.[42] It was also the highest individual score in ODI cricket in a run chase, a record which was broken seven years later by Shane Watson.[43][44] Dhoni ended the series with the highest aggregate of 346 runs and was awarded the Man of the series.[45]
+</p>
+</li>
+<li>
+<p>
+Dhoni keeping wickets in a test match
+Dhoni became a regular in the Indian side after the home series against South Africa in November 2005.[46] In December 2005, Dhoni was awarded a "B" grade contract by the BCCI.[47] Dhoni made his test debut in the same month against Sri Lanka during their tour of India at Chennai.[48][49] Dhoni scored 30 runs in his debut match, that was marred by rain and ended in a draw.[50] Dhoni made his maiden half-century in the second test leading to an Indian win.[51] Dhoni played all the matches in the subsequent tour of Pakistan scoring 219 runs in five ODI matches and 179 runs in five tests including his maiden test century in the second test in Faisalabad.[52] He scored 106 runs across three tests in the home series against England in March 2006 and 177 runs in five ODI series that followed.[52][46] Dhoni dropped multiple catches and missed dismissal chances including a key stumping opportunity of Andrew Flintoff which led to criticism of his wicket-keeping.[53]
+
+In the DLF Cup 2006-07, Dhoni scored 43 runs as the team lost twice in three games and did not qualify for the finals. In the 2006 ICC Champions Trophy, India lost to West Indies and Australia, though Dhoni scored a half-century against West Indies and failed to make it to the knock out stage.[54] In the ODI series in South Africa in November 2006, Dhoni scored 139 runs in four matches in the series loss.[46] In the test series that followed, Dhoni scored 114 runs in two tests including a first test victory in South Africa in the first test, but was ruled out of the third test with injury.[55] Dhoni made his T20 international debut in December 2006 against South Africa at Johannesburg.[56] Dhoni was subsequently named in the ODI team of the year by the ICC for 2006.[57]
+
+2007 World T20 and captaincy
+India recorded identical 3–1 victory over West Indies and Sri Lanka in early 2007 with Dhoni averaging in excess of 100 in both the series. Subsequently, Dhoni was part of the squad for 2007 Cricket World Cup in which India unexpectedly crashed out in the group stage after losses to Bangladesh and Sri Lanka with Dhoni scoring ducks in both these matches and just 29 runs in the tournament.[46][58] As a result, Dhoni's house in Ranchi was vandalized and damaged by activists of JMM and security was tightened for his family.[59] Dhoni scored 91* against Bangladesh in the first match of the ODI series in May 2007 which fetched the Man of the Match award while also later winning the Man of the Series after the third game of the series was washed away.[60] Dhoni played for ACC Asia XI cricket team in the Afro-Asia Cup, scoring 174 runs in three matches at an average of 87 including 139 off 97 balls in the third ODI.[61]
+
+Dhoni was named vice-captain of the ODI team for the 2007 Future Cup against South Africa in Ireland and the subsequent seven-match series against England.[62] Dhoni was awarded an 'A' grade contract by BCCI in June 2007.[63] Dhoni was appointed as the captain of the Indian squad for the inaugural World Twenty20 in September 2007.[64] Dhoni led India to victory in the tournament after defeating Pakistan in the final.[65][66] Dhoni was appointed as the captain of Indian cricket team in all formats later.[67]
+
+On 2 September 2007, Dhoni equaled Adam Gilchrist's international record for the most dismissals in an innings in ODI by effecting six dismissals against England.[68] Dhoni took his first and only wicket in international cricket on 30 September 2009 when he bowled Travis Dowlin of West Indies in the 2009 ICC Champions Trophy.[69] However, he scored just three runs in the only match he batted with India crashing out of the series in the group stage after the match against Australia was washed out.[70] Dhoni averaged more than 60 in the 2008-09 season.[71] Dhoni scored two centuries during Sri Lanka's tour of India in November 2009 which India won to achieve the top ranking in ICC test ranking for the first time in its history.[72] Dhoni had an excellent year in ODIs in 2009, scoring 1198 runs in just 24 innings, at an average of 70.43 and topped the ICC ODI batsman rankings for several months.[73] He was named as captain and wicket-keeper of the ICC ODI Team of the year.[74]
+</p>
+</li>
+    
+    </ul>
+    <h1>Personal life</h1>
+        <p>
+        
+        Dhoni married Sakshi Singh Rawat on 4 July 2010 in Dehradun.[179][180] Dhoni and his wife have a daughter, Ziva Dhoni who was born on 6 February 2015.[181][182] He lives in his farmhouse outside Ranchi.[183] Dhoni is an automotive enthusiast and owns a number of bikes and cars in his collection.[184]
+        </p>
+</div>
+  );
+}
+export default About;
+
+----contact.js----
+import React from 'react'
+
+export const Contact = () => {
+  return (
+    <div>
+        
+        <h1>MS Dhoni Contact Addresses</h1>
+       <ul>
+
+       
+  <li>
+    <p>
+Please note down Mahendra Singh Dhoni’s house address: Harmu Housing Colony, Ranchi, Jharkhand, India.
+<li>
+Postal Address: Not available right now
+</li>
+<li>
+    Office Address: Not available right now
+    </li>
+<li>Residence Address: Harmu Housing Colony, Ranchi, Jharkhand, India
+    </li>
+<li>We’ll soon update M.S. Dhoni’s office address and postal address. Keep visiting this website for updates!
+</li>
+M.S. Dhoni Important Contact Numbers
+Please note down his celebrity agent’s office contact number: 022-699548XX. Please note that it’s not his personal office but that of celebrity management. If something is changed, please let us know.
+</p>
+</li>
+<li>
+<p>
+    
+Personal Contact Number: Not available right now
+Real Mobile Number: Not available right now
+Mahendra Singh Dhoni Mobile Number: Unavailable with us
+WhatsApp Mobile Number: Not available right now
+Mahendra Singh Dhoni WhatsApp Number: Not available right now
+Manager Contact Number: Not available right now
+Personal Contact Number: Not available right now
+Contact Mobile Number: Not available right now
+WhatsApp Group: Not available right now
+Real Contact Number: Not available right now
+Mahendra Singh Dhoni Contact Number: 022-699548XX
+Mahendra Singh Dhoni Personal WhatsApp Number: Not available right now
+READ MORE  Ishan Kishan Phone Number, Whatsapp Number, and House Address
+Email Address & Official Website
+Please note down his celebrity agent’s office contact email address: info.rhiti@rhitisports.com.
+</p>
+</li>
+<li>
+    <p>
+Official Website: Not Available with us
+Official Email ID: Not Available with us
+Social Media Presence
+Instagram Profile : Not Known
+YouTube Channel: Not Available
+Twitter Handle : Not Available
+Snapchat Profile (Verified): Not Available 
+Facebook Page (Official): Not Available
+</p>
+</li>
+        
+        </ul>
+    </div>
+  )
+}
