@@ -1,0 +1,27 @@
+<html>
+<script>
+var arrsize=parseInt(prompt("Enter the arraySize :"));
+var arr=[];
+for(i=0;i<arrsize;i++){
+  arr[i]=parseInt(prompt());
+}
+console.log(arr);
+
+function isPerfectNumber(num) {
+      let sum = 0;
+      for (var i = 1; i <= num / 2; i++) {
+        if (num % i === 0) {
+          sum += i;         }
+      }
+      return sum === num;
+    }
+
+        for (var i = 0; i < arrsize; i++) {
+      if (isPerfectNumber(arr[i])) {
+        console.log(arr[i] + " is a perfect number.");
+      } else {
+        console.log(arr[i] + " is not a perfect number.");
+      }
+    }
+</script>
+</html>
