@@ -1,0 +1,37 @@
+<html>
+<script>
+let x=prompt("No of lemon in the hand: ")
+
+if(x>=21){
+   if(x==21){
+        console.log("god 1:7 offered , god 2:7 offered , god 3:7 offered")
+        console.log("suffient")
+}
+else{
+ console.log("god 1:7 offered , god 2:7 offered , god 3:7 offered")
+console.log("surplus")}
+}
+else{
+let offered = Math.floor(x / 7);  // Number of gods that can be offered
+        let remaining = x % 7;           // Remaining lemons after offerings
+        let needed = 21 - x;       // Lemons needed to complete all offerings
+
+        // Display output based on the number of gods offered
+        if (offered == 2) {
+            console.log("God 1:7 offered, God 2:7 offered");
+            console.log("God 3: " + remaining + " (having), Needed: " + (7 - remaining));
+            console.log("Total Needed: " + needed);
+        } else if (offered == 1) {
+            console.log("God 1:7 offered");
+            console.log("God 2: " + remaining + " (having), Needed: " + (7 - remaining));
+            console.log("God 3: 0 (having), Needed: 7");
+            console.log("Total Needed: " + needed);
+        } else {
+            console.log("God 1: " + remaining + " (having), Needed: " + (7 - remaining));
+            console.log("God 2: 0 (having), Needed: 7");
+            console.log("God 3: 0 (having), Needed: 7");
+            console.log("Total Needed: " + needed);
+        }}
+
+</script>
+</html>
