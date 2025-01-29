@@ -1,0 +1,280 @@
+1)
+**************************************Normal form using redux***********************************
+import React,{useState} from 'react'
+
+
+
+export const Formtoredux = () => {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+
+  const handleChange = (event) => {
+    const { name: inputName, value } = event.target;
+    if (inputName === "name") setName(value);
+    else if (inputName === "age") setAge(value);
+    console.log(name);
+    console.log(age);
+  };
+
+  return (
+    <div>
+      <label>NAME:</label>
+      <input type="text" name="name" value={name} onChange={handleChange} />
+      <label>AGE:</label>
+      <input type="number" name="age" value={age} onChange={handleChange} />
+      <h1>name:{name}</h1>
+      <h1>age:{age}</h1>
+    </div>
+  );
+};
+      
+2)
+
+******************************************ROUTER.JS**********************************************************
+import './App.css';
+import Home from'./home'
+import { About } from './about';
+import { Users } from './users.js';
+import { Contact } from './contact';
+import { BrowserRouter as Router,Route,Routes,Link } from 'react-router-dom';
+import { Newform } from './newform.js';
+
+function App2() {
+  return (
+    <Router>
+      <div className="about">
+      <h1 > Welcome 😊</h1>
+      </div>
+    <div >
+      
+      <nav className="style">
+          <Link to="/"></Link>
+          <Link to="/newform">count</Link>
+          <Link to="/home">Home</Link>
+          <Link to="/about">About        </Link>
+          <Link to="/users">User    </Link>
+          <Link to="/contact">Contact    </Link>
+        
+      </nav>
+      <Routes>
+      <Route path="/newform" Component={Newform} />
+        <Route path="/home" Component={Home} />
+        <Route path="/about" Component={About}/> 
+      <Route path ="/users" Component={Users}/>
+      <Route path='/contact' Component={Contact}/>
+      </Routes>
+
+
+    </div>
+    </Router>
+  );
+}
+
+export default App2;
+
+
+
+************************************home.js**************************************
+import React ,{useState}from 'react'
+import './App.css';
+import{useDispatch} from 'react-redux'
+import { addUser } from './slices/userslice';
+const Home = () => {
+    const dispatch=useDispatch()
+    const [formdata,setformdata]=useState({
+        name:"",
+        age:""
+    });
+    function handlechange(event) {
+        const { name, value } = event.target;
+        setformdata((curr) => {
+          return {
+            ...curr,
+            [name]: value
+          };
+        });
+      }
+      
+console.log(formdata)
+const add=(event)=>{
+    event.preventDefault();
+    dispatch(addUser(formdata))
+}
+  return (
+    <div className="home"> 
+        
+        <h1 className='cet'>Home
+            </h1>
+            <form className='cet'>
+                <label>name:</label>
+                
+                <input name="name" type="text" value={formdata.name} onChange={handlechange} />
+                <br />
+                
+                <label>age:</label>
+                
+                <input name="age" type="number" value={formdata.age} onChange={handlechange} />
+                <br />
+                <button onClick={add}>ADD</button>
+
+            </form>
+
+            
+
+
+      
+    </div>
+  )
+}
+
+export default Home
+
+
+***********************************user.js********************************
+import './App.css'
+import React from 'react'
+import {useSelector} from 'react-redux'
+export const Users = () => {
+    const users = useSelector((state) => state.userinfo.users);
+    console.log(users)
+
+  return (
+    <div className= "user" >
+
+        <h1>users</h1>
+    </div>
+  )
+}
+//state is reducer userinfo from store users from slice
+
+***********************************newform.js***************************************
+
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addUser } from './slices/userslice';
+
+
+export const Newform = () => {
+    const dispatch = useDispatch();
+    const [numbers, setnums] = useState({
+        num1: "",
+        num2: ""
+    });
+
+    const handlechange = (e) => {
+        const { name, value } = e.target;
+        setnums(prevState => ({
+            ...prevState,
+            [name]: value,
+        }));
+    };
+var add1;
+    const add = (e) => {
+        e.preventDefault();
+        add1=parseInt(numbers.num1)+parseInt(numbers.num2)
+        dispatch(addUser(add1));
+    };
+var mul1;
+    const mul = (e) => {
+        mul1=parseInt(numbers.num1)*parseInt(numbers.num2)
+        e.preventDefault();
+        dispatch(addUser(mul1)); 
+    };
+
+var sub1;
+    const sub = (e) => {
+        sub1 =parseInt(numbers.num1)-parseInt(numbers.num2)
+        e.preventDefault();
+        dispatch(addUser(sub1)); 
+    };
+    return (
+        <div>
+            <form>
+                <label>Number 1: </label>
+                <input
+                    type="number"
+                    value={numbers.num1}
+                    name="num1"
+                    onChange={handlechange}
+                />
+                <label>Number 2: </label>
+                <input
+                    type="number"
+                    value={numbers.num2}
+                    name="num2"
+                    onChange={handlechange}
+                />
+            </form>
+            <button onClick={add}>Add</button>
+            <button onClick={mul}>Multiply</button>
+            <button onClick={sub}>Subtraction</button>
+        </div>
+    );
+};
+
+******************contact.js*********************
+import React from 'react'
+
+export const Contact = () => {
+  return (
+    <div>
+        <h1>Contact Page</h1>
+    </div>
+  )
+}
+
+*************************************about.js************************************
+import React from 'react'
+
+export const About = () => {
+  return (
+    <div>
+        <img 
+          src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGltYWdlfGVufDB8fHx8MTYzMzE2Njk5NQ&ixlib=rb-1.2.1&q=80&w=400" 
+          alt="About Page" 
+          style={{ position: 'absolute',  
+            width: '150px', 
+            height: '150px', 
+            borderRadius: '10px' }}/>
+        <span>About Page</span>
+    </div>
+  )
+}
+*****************************App -> store.js***************************
+
+import { configureStore } from "@reduxjs/toolkit";
+import userReducer from '../slices/userslice';
+const store=configureStore({ 
+    reducer:{
+        userinfo:userReducer,
+    },
+});
+export default store;
+
+*****************************slices-> userslices.js*******************************
+
+import {createSlice} from'@reduxjs/toolkit';
+const initialState={
+    users:[],
+}
+const userSlice=createSlice({
+    name:'users',
+    initialState,reducers:{
+        addUser:(state,actions)=>{
+            state.users=[...state.users,actions.payload];
+        },
+    },
+});
+export const {addUser}=userSlice.actions;
+export default userSlice.reducer;
+
+
+**************************CHANGES IN INDEX.JS**************************
+import { Provider } from 'react-redux'
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={store}>
+<App/>
+</Provider>
+);

@@ -1,0 +1,90 @@
+import './App.css';
+import {Home }from'./home'
+import { Marks } from './marks';
+import { Projects } from './projects.js';
+import { Certificates } from './certificates.js';
+import { Skills } from './skills.js';
+import { Contact } from './contact';
+import { BrowserRouter as Router,Route,Routes,Link } from 'react-router-dom';
+
+function App2() {
+  return (
+    <Router>
+      <div class='back'>
+        
+      </div>
+    <div >
+      
+      <nav className="style">
+          <Link to="/"></Link>
+          <Link to="/home">Home</Link>
+          <Link to="/marks">Educations </Link>
+          <Link to="/certificates">Certificates </Link>
+          <Link to="/projects">Projects</Link>
+          <Link to="/skills">Skills</Link>
+
+          <Link to="/contact">Contact    </Link>
+        
+      </nav>
+      <Routes>
+        <Route path="/home" Component={Home} />
+       
+       <Route path="/marks" Component={Marks}/> 
+      <Route path ="/certificates" Component={Certificates}/>
+      <Route path="/projects" Component={Projects} />
+      <Route path="/skills" Component={Skills} />
+      <Route path='/contact' Component={Contact}/>
+      </Routes>
+
+
+    </div>
+    </Router>
+  );
+}
+
+export default App2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react'
+import DHANA from'./image.png'
+import './App.css'
+export const Home = () => {
+  return (
+    <div >
+      <img 
+    src={DHANA}
+    alt="Dhanapriya VA" 
+    className="profile"
+  />
+      <h1 > Hi Iam Dhanapriya 🙏!</h1>
+      
+    
+      <ul>
+
+        <li>
+      <h3 className="about">
+        I am a BE CSE student specializing in AI/ML with experience in completing some mini projects that strengthened my problem-solving and AI development abilities. 
+      </h3>
+      </li>
+      
+      <h4>
+
+      Passionate about AI-driven solutions, I am eager to contribute to innovative projects and expand my expertise in the AI/ML field.
+      </h4>
+      
+      </ul>
+      
+  </div>
+  )
+}

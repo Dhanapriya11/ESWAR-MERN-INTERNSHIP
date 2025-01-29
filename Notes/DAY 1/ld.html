@@ -1,0 +1,30 @@
+let lemon_in_hands = parseInt(prompt("no.of lemon in hand"));
+const lemons_needed_per_god = 7;
+const gods = 3;
+let shortage = 0;
+let surplus = 0;
+
+for (let i = 1; i <= gods; i++) {
+    if (lemon_in_hands >= lemons_needed_per_god) {
+        console.log(god ${i} ${lemons_needed_per_god} offer);
+        lemon_in_hands -= lemons_needed_per_god;
+    } else {
+        if (lemon_in_hands > 0) {
+            console.log(god ${i} having ${lemon_in_hands} needed ${lemons_needed_per_god - lemon_in_hands});
+            shortage += (lemons_needed_per_god - lemon_in_hands);
+            lemon_in_hands = 0;
+        } else {
+            console.log(god ${i} need ${lemons_needed_per_god});
+            shortage += lemons_needed_per_god;
+        }
+    }
+}
+
+if (lemon_in_hands > 0) {
+    surplus = lemon_in_hands;
+    console.log(surplus ${surplus});
+} else if (shortage > 0) {
+    console.log(shortage ${shortage});
+} else {
+    console.log("sufficient");
+}

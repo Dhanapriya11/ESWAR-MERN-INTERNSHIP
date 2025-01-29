@@ -1,0 +1,151 @@
+ ----useeffect 1:----
+import React,{useState,useEffect} from 'react'
+
+export const Useeffect2 = () => {
+const [start,setStart]=useState(0)
+useEffect(()=>{console.log('the start value change:' ,start
+);},[start]
+);
+  return (
+    <div>
+        <p>{start}</p>
+    <button onClick={()=>setStart(start+1)}>+</button>
+    <button onClick={()=>setStart(start-1)}>-</button>
+    </div>
+  )
+}
+
+---useeffect 2----
+import React,{useState,useEffect} from 'react'
+
+export const Useeffect2 = () => {
+const [start,setStart]=useState(0)
+useEffect(()=>{
+    //title la output 
+    // document.title=`value${start}`;
+    
+    console.log('the start value change:' ,start
+);},[start]
+);
+  return (
+    <div>
+{/* <h1>{document.title}</h1> */}
+        <p>{start}</p>
+    <button onClick={()=>setStart(start+1)}>+</button>
+    <button onClick={()=>setStart(start-1)}>-</button>
+    </div>
+  )
+}
+
+----reducer 1----
+import React,{useReducer} from 'react'
+
+export const Usereducer = () => {
+    function reducerfunction(state,action){
+        
+        return {count:state.count+1}
+    }
+   
+    const [state, dispatch] = useReducer(reducerfunction, {count:55})
+     function increment(){
+        dispatch();
+     }
+     function decrement(){
+        dispatch();
+     }
+     console.log(state)
+     
+  return (
+    
+    <div>
+        
+        <p>count:{state.count}</p>
+        <button onClick={increment}>+</button>
+<button onClick={decrement}>-</button>
+    </div>
+  )
+}
+
+---reducer2----
+
+import React,{useReducer} from 'react'
+
+export const Usereducers = () => {
+    function reducerfunction(state,action){
+        switch(action.type){
+            case"increment":
+                 return{count:state.count+1}
+            case"decrement":
+                   return{count:state.count-1}
+        }
+
+        
+    }
+   
+    const [state, dispatch] = useReducer(reducerfunction, {count:55})
+     function increment(){
+        dispatch({type:'increment'});
+     }
+     function decrement(){
+        dispatch({type:'decrement'});
+     }
+     console.log(state)
+     
+  return (
+    
+    <div>
+        
+        <p>count:{state.count}</p>
+        <button onClick={increment}>+</button>
+<button onClick={decrement}>-</button>
+    </div>
+  )
+}
+
+---reducer 3---
+import React,{useReducer} from 'react'
+
+export const Usereducer3 = () => {
+    const ACTIONS={
+        INCREMENT:"increment",
+        DECREMENT:"decrement",
+        RESET:"reset"
+    }
+    function reducerfunction(state,action){
+        switch(action.type){
+            case ACTIONS.INCREMENT:
+                 return{count:state.count+1}
+            case ACTIONS.DECREMENT:
+                   return{count:state.count-1}
+            case ACTIONS.RESET:
+                return{count:55}
+
+        }
+
+        
+    }
+   
+    const [state, dispatch] = useReducer(reducerfunction, {count:55})
+     function increment(){
+        dispatch({type:'increment'});
+     }
+     function decrement(){
+        dispatch({type:'decrement'});
+     }
+     function reset(){
+        dispatch({type:'reset'});
+     }
+     console.log(state)
+     
+  return (
+    
+    <div>
+        
+        <p>count:{state.count}</p>
+        <button onClick={increment}>+</button>
+<button onClick={decrement}>-</button>
+<button onClick={reset}>reset</button>
+    </div>
+  )
+}
+
